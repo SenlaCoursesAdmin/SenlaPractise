@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<style>
+    .dobby {
+        display: flex;
+        flex-direction: row;
+    }
+</style>
+<body>
+<h2>Sale</h2>
+<p th:text="${price}"></p>
+<p th:text="${role_disc}"></p>
+<p th:text="${priceBef}"></p>
+<hr>
+<div class="dobby" th:each="hist:${journal}">
+
+    <p th:text="${histStat.count}"></p>&nbsp;&nbsp;
+    <p th:text="${hist.getDate()} "></p>&nbsp;&nbsp;
+    <p th:text="${hist.getBeganPrice()}"></p>&nbsp;&nbsp;
+    <p th:text="${hist.getPriceAfterDiscount()}"></p>&nbsp;&nbsp;
+    <p th:text="${hist.getDiscount()}"></p>&nbsp;&nbsp;
+    <p th:text="${hist.getRole()}"></p>
+
+
+</div>
+</body>
+</html>
